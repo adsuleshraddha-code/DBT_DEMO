@@ -1,16 +1,14 @@
-with bike as (
+WITH bike AS (
 
-    select distinct
-    START_STATION_ID,
-    start_station_name,
-    --start_last,
-    start_lat,
-    start_lng
+    SELECT DISTINCT
 
-    from {{ source('demo', 'bike') }}
-    where RIDE_ID != 'ride_id'
+    START_STATIO_ID,
+    START_STATION_NAME,
+    START_LAT,
+    START_LNG
 
-   
+    FROM {{ source('demo', 'bike') }}
+    WHERE RIDE_ID != 'ride_id'
 )
 
-select * from bike
+SELECT * FROM bike
